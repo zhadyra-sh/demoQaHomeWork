@@ -4,7 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.DropdownComponent;
 import pages.components.ModalComponent;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -22,7 +21,6 @@ public class RegistrationPage {
             hobbiesWrapper = $("#hobbiesWrapper"),
             currentAddress = $("#currentAddress"),
             submitButton = $("button#submit");
-
 
     CalendarComponent calendarComponent = new CalendarComponent();
     ModalComponent modalComponent = new ModalComponent();
@@ -107,14 +105,9 @@ public class RegistrationPage {
         return this;
     }
 
-   public RegistrationPage checkModalNotVisible() {
-       $(".modal-dialog").shouldNot(appear);
-       return this;
-   }
-
-//    public RegistrationPage checkErrorVisible(String errorMessage) {
-//        $(".error-message").shouldHave(text(errorMessage));
-//        return this;
-//    }
+    public RegistrationPage checkModalNotVisible() {
+        $(".modal-dialog").shouldNot(appear);
+        return this;
+    }
 
 }

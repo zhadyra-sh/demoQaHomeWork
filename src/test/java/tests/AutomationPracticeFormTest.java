@@ -1,12 +1,10 @@
 package tests;
-
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 public class AutomationPracticeFormTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-
 
     @Test
     void fillRegistrationFormTest() {
@@ -37,7 +35,6 @@ public class AutomationPracticeFormTest extends TestBase {
                 .checkResult("State and City", "NCR Delhi");
 
     }
-
     @Test
     void minDataTest() {
         registrationPage.openPage()
@@ -50,7 +47,6 @@ public class AutomationPracticeFormTest extends TestBase {
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "7771234567");
     }
-
     @Test
     void wrongEmailTest() {
         registrationPage.openPage()
@@ -63,5 +59,4 @@ public class AutomationPracticeFormTest extends TestBase {
         registrationPage.checkModalNotVisible();
 
     }
-
 }
