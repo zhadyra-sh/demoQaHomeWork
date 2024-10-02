@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.DropdownComponent;
 import pages.components.ModalComponent;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -105,9 +107,14 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage wrongEmailTest(String key, String value) {
-        modalComponent.checkResult(key, value);
-        return this;
-    }
+   public RegistrationPage checkModalNotVisible() {
+       $(".modal-dialog").shouldNot(appear);
+       return this;
+   }
+
+//    public RegistrationPage checkErrorVisible(String errorMessage) {
+//        $(".error-message").shouldHave(text(errorMessage));
+//        return this;
+//    }
 
 }
