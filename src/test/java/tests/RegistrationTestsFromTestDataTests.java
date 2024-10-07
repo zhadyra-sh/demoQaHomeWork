@@ -1,6 +1,6 @@
 package tests;
 
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.appear;
@@ -10,26 +10,9 @@ import static com.codeborne.selenide.Selenide.*;
 import static tests.TestData.*;
 
 public class RegistrationTestsFromTestDataTests extends TestBase {
-//    static String firstName,
-//            lastName,
-//            userEmail,
-//            genterWrapper,
-//            userNumber;
-
-//    @BeforeEach
-//    void prepareTestData() {
-//        firstName = "Test";
-//        lastName = "Testing";
-//        userEmail = "test@gmail.com";
-//        genterWrapper = "Other";
-//        userNumber = "1234567890";
-//    }
 
     @Test
     void successfulRegistrationTest() {
-//       String firstName = "Test",
-//                lastName = "Testing",
-//                userEmail = "test@gmail.com";
 
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -54,7 +37,6 @@ public class RegistrationTestsFromTestDataTests extends TestBase {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
-
         $(".modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(firstName), text(lastName),
